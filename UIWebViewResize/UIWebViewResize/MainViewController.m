@@ -38,4 +38,16 @@
     }
 }
 
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    NSLog(@"View Width: %f", self.view.frame.size.width);
+    NSLog(@"WebView Width: %f", self.webview.frame.size.width);
+    
+    self.webview.frame = CGRectMake(self.webview.frame.origin.x, self.webview.frame.origin.y, self.view.frame.size.width, self.webview.frame.size.height);
+    
+    NSLog(@"Forced WebView Width: %f", self.webview.frame.size.width);
+}
+
 @end
