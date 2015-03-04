@@ -17,33 +17,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-7g-efS">
-                                <rect key="frame" x="0.0" y="0.0" width="311" height="383"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-7g-efS">
+                                <rect key="frame" x="0.0" y="0.0" width="311" height="384"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="311" id="hmV-xr-zVp"/>
+                                    <constraint firstAttribute="height" constant="384" id="wfS-M1-Y6c"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="Twd-Jf-FtM" kind="embed" id="YLX-eF-e7o"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wmf-ic-QXS">
-                                <rect key="frame" x="0.0" y="383" width="311" height="385"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmf-ic-QXS">
+                                <rect key="frame" x="0.0" y="384" width="311" height="384"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="311" id="UWN-Jj-aJ6"/>
+                                    <constraint firstAttribute="height" constant="384" id="jPD-VI-ZaJ"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="6rD-G7-SVi" kind="embed" id="l0z-Cd-tT6"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Sd-rs-E0e">
-                                <rect key="frame" x="310" y="0.0" width="714" height="768"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Sd-rs-E0e">
+                                <rect key="frame" x="311" y="0.0" width="714" height="768"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="768" id="6jI-IN-U8n"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="1lw-RF-iPq" kind="embed" id="The-dA-T1f"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6Sd-rs-E0e" secondAttribute="trailing" constant="-1" id="9KE-n4-JYf"/>
+                            <constraint firstAttribute="bottom" secondItem="wmf-ic-QXS" secondAttribute="bottom" id="R4O-fj-FZz"/>
+                            <constraint firstItem="yAa-7g-efS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ucr-6Q-5ia"/>
+                            <constraint firstItem="6Sd-rs-E0e" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Y98-jE-wh2"/>
+                            <constraint firstItem="yAa-7g-efS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aOE-fT-8Pe"/>
+                            <constraint firstItem="wmf-ic-QXS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ds5-Nt-0HV"/>
+                            <constraint firstItem="6Sd-rs-E0e" firstAttribute="leading" secondItem="yAa-7g-efS" secondAttribute="trailing" id="uTz-yY-mR2"/>
+                        </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
                         <outlet property="lowerView" destination="wmf-ic-QXS" id="lTY-W2-s2s"/>
+                        <outlet property="lowerWidthConstraint" destination="UWN-Jj-aJ6" id="nXJ-tG-WVN"/>
                         <outlet property="mainView" destination="6Sd-rs-E0e" id="n7I-vq-4co"/>
                         <outlet property="upperView" destination="yAa-7g-efS" id="b6i-An-vNp"/>
+                        <outlet property="upperWidthConstraint" destination="hmV-xr-zVp" id="wN5-YV-wcB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -59,7 +81,7 @@
                         <viewControllerLayoutGuide type="bottom" id="jQ5-0j-En7"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9Ct-gC-pkY">
-                        <rect key="frame" x="0.0" y="0.0" width="311" height="383"/>
+                        <rect key="frame" x="0.0" y="0.0" width="311" height="384"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upper Detail View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okS-4a-dU5">
@@ -86,7 +108,7 @@
                         <viewControllerLayoutGuide type="bottom" id="zrB-wG-jl3"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oYl-t7-Dcj">
-                        <rect key="frame" x="0.0" y="0.0" width="311" height="385"/>
+                        <rect key="frame" x="0.0" y="0.0" width="311" height="384"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lower Detail Screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43q-Uu-zF3">

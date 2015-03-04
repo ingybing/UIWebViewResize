@@ -14,5 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIView *lowerView;
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *upperWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lowerWidthConstraint;
+
 @end
 

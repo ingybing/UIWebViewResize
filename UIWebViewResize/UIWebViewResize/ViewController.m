@@ -31,19 +31,21 @@
 
 - (void)resizeNotificationReceived:(NSNotification *) notification
 {
+    if (self.upperWidthConstraint.constant == 0)
+    {
+        self.upperWidthConstraint.constant = 311;
+        self.lowerWidthConstraint.constant = 311;
+    }
+    else
+    {
+        self.upperWidthConstraint.constant = 0;
+        self.lowerWidthConstraint.constant = 0;
+    }
+    
+    [self.view setNeedsUpdateConstraints];
+    
     [UIView animateWithDuration:0.5 animations:^{
-        if (self.upperView.frame.size.width == 0)
-        {
-            self.upperView.frame = CGRectMake(0, 0, 311, self.upperView.frame.size.height);
-            self.lowerView.frame = CGRectMake(0, 383, 311, self.lowerView.frame.size.height);
-            self.mainView.frame = CGRectMake(310, 0, 714, 768);
-        }
-        else
-        {
-            self.upperView.frame = CGRectMake(0, 0, 0, self.upperView.frame.size.height);
-            self.lowerView.frame = CGRectMake(0, 383, 0, self.lowerView.frame.size.height);
-            self.mainView.frame = CGRectMake(0, 0, 1024, 768);
-        }
+        [self.view layoutIfNeeded];
     }];
 }
 
